@@ -21,13 +21,13 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`) VALU
 (@Entry, 'esMX', @Name, "Transfigurador"),
 (@Entry, 'ruRU', @Name, "Трансмогрификатор");
 
--- Spawn the Warpweaver in a reserved guid band for this module (60030000-60039999):
+-- Spawn the Warpweaver in a reserved guid band for this module (10030000-10039999):
 -- high enough never to collide with core content, spaced 10k from other modules'
 -- bands. The id1 DELETE relocates any prior manual placement on every host.
 DELETE FROM `creature` WHERE `id1` = @Entry;
-DELETE FROM `creature` WHERE `guid` = 60030000;
+DELETE FROM `creature` WHERE `guid` = 10030000;
 INSERT INTO `creature` (`guid`, `id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
-(60030000, @Entry, 571, 5666.476, 649.495, 647.98, 4.5033); -- Dalaran
+(10030000, @Entry, 571, 5666.476, 649.495, 647.98, 4.5033); -- Dalaran
 
 SET
 @Entry = 190011,
